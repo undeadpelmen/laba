@@ -26,13 +26,13 @@ const laborator3 = function () {
                 <p>Собранный вид в 3д</p>
                 <GLBViewer autoRotate={true} modelPath={"/models/345cob.glb"} scale={0.1}/>
             </div>
-            {/*<div className="panel-body">*/}
-            {/*    <h2>Оформление решения.</h2>*/}
-            {/*    <p>1. Рисунок (схематично)</p>*/}
-            {/*    <img src="/photo/cxema345.png" alt=""/>*/}
-            {/*    <p>2. при равномерном движении Fтяг = Fтр; Fтр = m(мю)N, N = mg = P => Fтр = m(мю)P, m(мю) = Fтяг/P</p>*/}
-            {/*    <p>3. P = (1,5 ± 0,1)Н, Fтяг = (0,30 ± 0,02)Н, m(мю) = 0,3/1,5 = 0,2</p>*/}
-            {/*</div>*/}
+            <div className="panel-body">
+                <h2>Оформление решения.</h2>
+                <p>1. Рисунок (схематично)</p>
+                <img src="/photo/cxema345.png" alt=""/>
+                <p>{"2. при равномерном движении Fтяг = Fтр; Fтр = m(мю)N, N = mg = P => Fтр = m(мю)P, m(мю) = Fтяг/P"}</p>
+                <p>3. P = (1,5 ± 0,1)Н, Fтяг = (0,30 ± 0,02)Н, m(мю) = 0,3/1,5 = 0,2</p>
+            </div>
         </div>
     )
 }
