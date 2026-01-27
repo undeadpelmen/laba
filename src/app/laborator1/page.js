@@ -29,7 +29,7 @@ const laborator1 = function () {
                     <p>Разобранный вид</p>
                     <img src="/photo/1proctoreal.png" alt=""/>
                     <p>Собранный вид в 3д</p>
-                    <GLBViewer autoRotate={true} modelPath={"/models/laba12.glb"} scale={0.05}/>
+                    <GLBViewer autoRotate={true} modelPath={"/models/12cob.glb"} scale={0.05}/>
                 </div>
                 <div className="panel-body">
                     <h2>Оформление решения.</h2>
