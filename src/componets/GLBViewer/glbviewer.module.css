@@ -1,0 +1,16 @@
+.GLBViewer {
+    display: block;
+    position: relative;
+
+    background: #666666;
+    height: 800px;
+    width: 800px;
+}
+
+.Display {
+    display: block;
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+}

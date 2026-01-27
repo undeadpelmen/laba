@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc;
+    color: #333;
+    background-image: url("/photo/titul.jpg");
+    background-size: 100%;
+}
+
+
+h1 {
+    color: #191970;
+    background-color: #feedcd;
+    padding: 30px;
+    text-align: left;
+    margin: 0;
+    font-size: 1.5rem;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/*h9 {*/
+/*    color: #191970;*/
+/*    background-color:   #bae3e0;*/
+/*    padding: 30px;*/
+/*    text-align: left;*/
+/*    margin: 10px;*/
+/*    font-size: 1.5rem;*/
+/*    display: inline-block;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+h2 {
+    color: #191970;
+    background-color: #feedcd;
+    padding: 15px;
+    text-align: left;
+    margin: 0;
+    font-size: 1.5rem;
+    display: inline-block;
+    border-radius: 5px;
+}
+h5 {
+    color: #303a43;
+    background-color: #bae3e0;
+    padding: 30px;
+    text-align: left;
+    margin: 0;
+    font-size: 1.5rem;
+    display: inline-block;
+    border-radius: 5px;
+}
+h2 {
+    color: #191970;
+    background-color: #feedcd;
+    padding: 30px;
+    text-align: left;
+    margin: 0;
+    font-size: 1.5rem;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+h6 {
+    color: #191970;
+    background-color: #feedcd;
+    padding: 20px;
+    text-align: left;
+    margin: 0;
+    font-size: 1.5rem;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+a {
+    color: #8a2be2;
+    background-color: #ffebcd;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+a:hover {
+    background-color: #feedcd;
+    color: #6a0dad;
+}
+
+
+p {
+    font-size: 18px;
+    color: #333;
+    background-color: #feedcd;
+    padding: 20px;
+    margin: 10px 0;
+    line-height: 1.6;
+    border-radius: 5px;
+    overflow: hidden;
+    /*background-color: transparent;*/
+}
+
+
+.image-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px #000000;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/*.container {*/
+/*    background-image: url('your-image.png');*/
+/*    background-size: cover; !* Масштабирует, чтобы всё поместилось, обрезая лишнее *!*/
+/*    !* Или background-size: contain; *! !* Масштабирует, чтобы всё уместилось полностью *!*/
+/*    background-position: center; !* Центрирует *!*/
+/*    background-repeat: no-repeat;*/
+/*    !* Если нужен фон, который просто обрезается по высоте блока, а не по тексту *!*/
+/*    !* background-size: 100% auto; *! !* Ширина 100%, высота авто *!*/
+/*}*/
