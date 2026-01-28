@@ -39,7 +39,7 @@ export default function GLBViewer({
         <div className={classes.GLBViewer}>
             <Canvas
                 shadows
-                camera={{position: [10, 10, 10], fov: 50}}
+                camera={{position: [3, 3, 3], fov: 50}}
                 onCreated={() => setLoading(false)}
                 className={classes.Display}
             >
