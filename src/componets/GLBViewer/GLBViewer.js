@@ -1,4 +1,3 @@
-// components/GLBViewer.jsx
 'use client'
 
 import {useRef, useState} from 'react'
@@ -10,17 +9,11 @@ function Model({url, scale = 1, position = [0, 0, 0], autoRatate = false}) {
     const group = useRef()
     const {scene, nodes, materials} = useGLTF(url)
 
-    // Optional: Auto-rotation
     useFrame((state) => {
         if (group.current && autoRatate) {
             group.current.rotation.y = Math.sin(state.clock.elapsedTime) * 0.1
         }
     })
-
-    // If you want to access specific parts of the model
-    // Object.keys(nodes).forEach(name => {
-    //   console.log(name) // See all available nodes
-    // })
 
     return (
         <group ref={group} dispose={null}>
@@ -37,7 +30,8 @@ export default function GLBViewer({
                                       modelPath = '/models/sample.glb',
                                       showControls = true,
                                       autoRotate = false,
-                                      scale = 1
+                                      scale = 1,
+                                      position = [0, 0, 0]
                                   }) {
     const [loading, setLoading] = useState(true)
 
@@ -51,18 +45,15 @@ export default function GLBViewer({
             >
                 <color attach="background" args={['#888888']}/>
 
-                {/* Lighting */}
-                <ambientLight intensity={0.5}/>
                 <directionalLight
-                    position={[5, 5, 5]}
+                    position={[10, 10, -10]}
                     intensity={1}
                     castShadow
                     shadow-mapSize-width={1024}
                     shadow-mapSize-height={1024}
                 />
 
-                {/* Model */}
-                <Model url={modelPath} scale={scale} autoRatate={autoRotate}/>
+                <Model url={modelPath} scale={scale} autoRatate={autoRotate} position={position}/>
                 <Environment preset="studio"/>
                 <ContactShadows
                     position={[0, -1, 0]}
@@ -72,7 +63,6 @@ export default function GLBViewer({
                     far={1}
                 />
 
-                {/* Controls */}
                 {showControls && (
                     <OrbitControls
                         autoRotate={autoRotate}
