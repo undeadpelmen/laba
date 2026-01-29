@@ -45,6 +45,7 @@ export default function GLBViewer({
             >
                 <color attach="background" args={['#888888']}/>
 
+                <ambientLight/>
                 <directionalLight
                     position={[10, 10, -10]}
                     intensity={1}
@@ -54,7 +55,7 @@ export default function GLBViewer({
                 />
 
                 <Model url={modelPath} scale={scale} autoRatate={autoRotate} position={position}/>
-                <Environment preset="studio"/>
+                <Environment files={"/hdr/studio.hdr"}/>
                 <ContactShadows
                     position={[0, -1, 0]}
                     opacity={0.5}
