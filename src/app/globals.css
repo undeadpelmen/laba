@@ -192,21 +192,18 @@ p {
         padding: 15px 10px;
         margin: 5px 0;
         font-size: 1.1rem;
-        background-color: rgba(254, 237, 205, 0.98);
     }
 
     p {
         padding: 15px;
         margin: 10px 0;
         font-size: 0.95rem;
-        background-color: rgba(254, 237, 205, 0.95);
     }
 
     a {
         padding: 12px;
         font-size: 0.9rem;
         margin: 3px 0;
-        background-color: rgba(255, 235, 205, 0.98);
     }
 
     .image-container {
