@@ -37,6 +37,7 @@ const laborator2 = function () {
                 <img src="/photo/tablisa.png" alt=""/>
             </div>
             <p>3. Вывод при увеличении растяжения пружины, сила упругости увеличивается. </p>
+            <a className="back" href="/">Назад</a>
         </div>
     );
 }

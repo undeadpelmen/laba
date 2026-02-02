@@ -37,6 +37,7 @@ const laborator1 = function () {
             </div>
             <p>2. Fупр = kΔx; Fупр = P; k = P/Δx </p>
             <p>3. P = (2.0 ± 0.1)Н; Δx = (40 ± 2)мм = (0,040 ± 0,002)м; k = 2.0/0.040 = 50Н/м </p>
+            <a className="back" href="/">Назад</a>
         </div>
     )
 }
