@@ -3,8 +3,12 @@
     position: relative;
 
     background: #666666;
-    height: 800px;
-    width: 800px;
+
+    height: 600px;
+    width: 100%;
+
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .Display {
@@ -13,4 +17,22 @@
 
     height: 100%;
     width: 100%;
+}
+
+@media (max-width: 1023px) {
+    .GLBViewer {
+        height: 600px;
+    }
+}
+
+@media (max-width: 700px) {
+    .GLBViewer {
+        height: 400px;
+    }
+}
+
+@media (max-width: 470px) {
+    .GLBViewer {
+        height: 350px;
+    }
 }

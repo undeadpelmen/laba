@@ -1,136 +1,263 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+/* Базовые сбросы и глобальные стили */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #f5f5dc;
     color: #333;
     background-image: url("/photo/titul.jpg");
-    background-size: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    line-height: 1.6;
+    position: relative;
 }
 
+/* Контейнер для центрирования контента */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
 
-h1 {
+/* Адаптивные заголовки */
+h1, h2, h5, h6 {
     color: #191970;
-    background-color: #feedcd;
-    padding: 30px;
-    text-align: left;
-    margin: 0;
-    font-size: 1.5rem;
-    display: inline-block;
-    border-radius: 5px;
-}
-
-/*h9 {*/
-/*    color: #191970;*/
-/*    background-color:   #bae3e0;*/
-/*    padding: 30px;*/
-/*    text-align: left;*/
-/*    margin: 10px;*/
-/*    font-size: 1.5rem;*/
-/*    display: inline-block;*/
-/*    border-radius: 5px;*/
-/*}*/
-
-h2 {
-    color: #191970;
-    background-color: #feedcd;
-    padding: 15px;
-    text-align: left;
-    margin: 0;
-    font-size: 1.5rem;
-    display: inline-block;
-    border-radius: 5px;
-}
-h5 {
-    color: #303a43;
-    background-color: #bae3e0;
-    padding: 30px;
-    text-align: left;
-    margin: 0;
-    font-size: 1.5rem;
-    display: inline-block;
-    border-radius: 5px;
-}
-h2 {
-    color: #191970;
-    background-color: #feedcd;
-    padding: 30px;
-    text-align: left;
-    margin: 0;
-    font-size: 1.5rem;
-    display: inline-block;
-    border-radius: 5px;
-}
-
-h6 {
-    color: #191970;
-    background-color: #feedcd;
+    background-color: rgba(254, 237, 205, 0.95);
     padding: 20px;
     text-align: left;
-    margin: 0;
-    font-size: 1.5rem;
-    display: inline-block;
+    margin: 10px 0;
     border-radius: 5px;
+    display: block;
+    width: 100%;
+    backdrop-filter: blur(2px);
 }
 
+h1 {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    padding: 25px 20px;
+}
+
+h2 {
+    font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+}
+
+h5, h6, h9 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+h5 {
+    color: #303a43;
+    background-color: rgba(186, 227, 224, 0.95);
+}
+
+/* Ссылки */
 a {
     color: #8a2be2;
-    background-color: #ffebcd;
-    padding: 15px 20px;
+    background-color: rgba(255, 235, 205, 0.95);
+    padding: 12px 18px;
     text-decoration: none;
     display: inline-block;
     border-radius: 5px;
     margin: 5px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    backdrop-filter: blur(2px);
 }
 
 a:hover {
-    background-color: #feedcd;
+    background-color: rgba(254, 237, 205, 0.95);
     color: #6a0dad;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-
+/* Адаптивные параграфы */
 p {
-    font-size: 18px;
+    font-size: clamp(1rem, 3vw, 1.125rem);
     color: #333;
-    background-color: #feedcd;
+    background-color: rgba(254, 237, 205, 0.9);
     padding: 20px;
-    margin: 10px 0;
-    line-height: 1.6;
+    margin: 15px 0;
+    line-height: 1.7;
     border-radius: 5px;
-    overflow: hidden;
-    /*background-color: transparent;*/
+    width: 100%;
+    backdrop-filter: blur(2px);
 }
 
-
+/* Исправленный контейнер для изображений БЕЗ обрезки */
 .image-container {
     position: relative;
-    display: block;
     width: 100%;
-    height: auto;
-    margin: 20px auto;
+    max-width: 100%;
+    margin: 25px auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Оставляем для скругления углов */
+    /* Убираем aspect-ratio для естественных пропорций */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* Исправленные стили для изображений БЕЗ обрезки */
+.image-container img {
+    width:  auto;
+    height: auto; /* Сохраняем пропорции */
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Изменяем с cover на contain для полного отображения */
+    object-position: center;
+}
+
+/* Текст поверх изображения */
 .text-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 32px;
-    text-shadow: 2px 2px 4px #000000;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    text-align: center;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    backdrop-filter: blur(2px);
 }
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+
+/* Альтернативный вариант: если нужно ограничить высоту, но не обрезать */
+.image-container.contain-height {
+    max-height: 500px; /* Максимальная высота по желанию */
 }
-/*.container {*/
-/*    background-image: url('your-image.png');*/
-/*    background-size: cover; !* Масштабирует, чтобы всё поместилось, обрезая лишнее *!*/
-/*    !* Или background-size: contain; *! !* Масштабирует, чтобы всё уместилось полностью *!*/
-/*    background-position: center; !* Центрирует *!*/
-/*    background-repeat: no-repeat;*/
-/*    !* Если нужен фон, который просто обрезается по высоте блока, а не по тексту *!*/
-/*    !* background-size: 100% auto; *! !* Ширина 100%, высота авто *!*/
-/*}*/
+
+.image-container.contain-height img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+/* Грид-сетка для карточек */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+/* Флекс-контейнер для навигации */
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+/* Медиа-запросы для разных устройств */
+
+/* Планшеты (768px и меньше) */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        background-size: cover;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    h1, h2, h5, h6 {
+        padding: 18px 15px;
+        margin: 8px 0;
+        text-align: center;
+    }
+
+    a {
+        padding: 10px 15px;
+        margin: 4px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .image-container {
+        margin: 15px auto;
+        /* Для мобильных можно оставить естественные пропорции */
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+    }
+}
+
+/* Мобильные телефоны (480px и меньше) */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    h1, h2, h5, h6 {
+        padding: 15px 10px;
+        margin: 5px 0;
+        font-size: 1.1rem;
+        background-color: rgba(254, 237, 205, 0.98);
+    }
+
+    p {
+        padding: 15px;
+        margin: 10px 0;
+        font-size: 0.95rem;
+        background-color: rgba(254, 237, 205, 0.95);
+    }
+
+    a {
+        padding: 12px;
+        font-size: 0.9rem;
+        margin: 3px 0;
+        background-color: rgba(255, 235, 205, 0.98);
+    }
+
+    .image-container {
+        margin: 10px auto;
+        border-radius: 5px;
+        /* Убираем фиксированные пропорции для мобильных */
+    }
+
+    .text-overlay {
+        font-size: 1.2rem;
+        padding: 10px;
+        width: 95%;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
